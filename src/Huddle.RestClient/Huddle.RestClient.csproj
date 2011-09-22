@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{28005210-3C35-4BD6-BBAB-BD5E7F94863B}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>Huddle.Clients</RootNamespace>
+    <AssemblyName>Huddle.RestClient</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>..\..\bin\Huddle.RestClient\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\Huddle.RestClient\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Jayrock.Json, Version=0.9.10905.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\lib\Jayrock.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="log4net">
+      <HintPath>..\..\lib\log4net.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ApiCall.cs" />
+    <Compile Include="ApiCallObservers\HttpStatusCodeExceptionHandler.cs" />
+    <Compile Include="ApiCallObservers\HttpStatusCodeHandlers\AuthenticationFailedStatusCodeHandler.cs" />
+    <Compile Include="ApiCallObservers\HttpStatusCodeHandlers\BadGatewayExceptionHandler.cs" />
+    <Compile Include="ApiCallObservers\HttpStatusCodeHandlers\BadRequestStatusCodeHandler.cs" />
+    <Compile Include="ApiCallObservers\HttpStatusCodeHandlers\ForbiddenStatusCodeHandler.cs" />
+    <Compile Include="ApiCallObservers\HttpStatusCodeHandlers\GoneExceptionHandler.cs" />
+    <Compile Include="ApiCallObservers\HttpStatusCodeHandlers\IHttpStatusCodeExceptionHandler.cs" />
+    <Compile Include="ApiCallObservers\HttpStatusCodeHandlers\InternalServerErrorExceptionHandler.cs" />
+    <Compile Include="ApiCallObservers\HttpStatusCodeHandlers\ObjectNotFoundExceptionHandler.cs" />
+    <Compile Include="ApiCallObservers\HttpStatusCodeHandlers\PaymentRequiredExceptionHandler.cs" />
+    <Compile Include="ApiCallObservers\HttpStatusCodeHandlers\ServiceUnavailableExceptionHandler.cs" />
+    <Compile Include="ApiResponse.cs" />
+    <Compile Include="ApiResponseT.cs" />
+    <Compile Include="Authentication\AnonymousAuthenticationMechanism.cs" />
+    <Compile Include="Authentication\BasicAuthenticationMechanism.cs" />
+    <Compile Include="Authentication\OAuth2AuthenticationMechanism.cs" />
+    <Compile Include="Authentication\OAuthWrapAuthenticationMechanism.cs" />
+    <Compile Include="Converters\JsonConverter.cs" />
+    <Compile Include="Converters\XmlConverter.cs" />
+    <Compile Include="Entities\EventArgs.cs" />
+    <Compile Include="Exceptions\AuthenticationException.cs" />
+    <Compile Include="Exceptions\AuthorizationException.cs" />
+    <Compile Include="Exceptions\BadRequestException.cs" />
+    <Compile Include="Exceptions\ConflictException.cs" />
+    <Compile Include="Exceptions\HuddleApiException.cs" />
+    <Compile Include="Exceptions\NetworkConnectionException.cs" />
+    <Compile Include="Exceptions\ObjectDeletedException.cs" />
+    <Compile Include="Exceptions\ObjectDeletedExceptionT.cs" />
+    <Compile Include="Exceptions\ObjectException.cs" />
+    <Compile Include="Exceptions\ObjectExceptionT.cs" />
+    <Compile Include="Exceptions\ObjectNotFoundException.cs" />
+    <Compile Include="Exceptions\ObjectNotFoundExceptionT.cs" />
+    <Compile Include="Exceptions\PaymentRequiredException.cs" />
+    <Compile Include="Exceptions\ServiceUnavailableException.cs" />
+    <Compile Include="Framework\AsyncLongRunningCommand.cs" />
+    <Compile Include="Framework\BlockingLongRunningCommandFactory.cs" />
+    <Compile Include="Framework\AsyncLongRunningCommandFactory.cs" />
+    <Compile Include="Framework\ICredentials.cs" />
+    <Compile Include="Framework\ILongRunningCommand.cs" />
+    <Compile Include="Framework\ILongRunningCommandFactory.cs" />
+    <Compile Include="Framework\BlockingLongRunningCommand.cs" />
+    <Compile Include="IApiCall.cs" />
+    <Compile Include="IApiCallObserver.cs" />
+    <Compile Include="Authentication\IRequestAuthenticationMechanism.cs" />
+    <Compile Include="IApiResponse.cs" />
+    <Compile Include="IApiResponseT.cs" />
+    <Compile Include="ICodec.cs" />
+    <Compile Include="IMultipartApiCall.cs" />
+    <Compile Include="DataPrinters\IPrintData.cs" />
+    <Compile Include="JsonApiCall.cs" />
+    <Compile Include="DataPrinters\JsonDataPrinter.cs" />
+    <Compile Include="MultiPartXmlApiCall.cs" />
+    <Compile Include="ObserverResolver.cs" />
+    <Compile Include="DataPrinters\PlainDataPrinter.cs" />
+    <Compile Include="Serializers\JsonCodec.cs" />
+    <Compile Include="Serializers\XmlCodec.cs" />
+    <Compile Include="ServicePointManagerHelper.cs" />
+    <Compile Include="StringWriterWithEncoding.cs" />
+    <Compile Include="UploadProgressEventArgs.cs" />
+    <Compile Include="XmlApiCall.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="DataPrinters\XmlDataPrinter.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Exceptions\Mvc\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

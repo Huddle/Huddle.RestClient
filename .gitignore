@@ -1,0 +1,8 @@
+.svn
+bin
+obj
+*ReSharper.user
+*TeamCity.user
+*.suo
+rakefile.rb
+go.bat

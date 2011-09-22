@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Huddle.RestClient", "Huddle.RestClient\Huddle.RestClient.csproj", "{28005210-3C35-4BD6-BBAB-BD5E7F94863B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Huddle.RestClient.Example", "Huddle.RestClient.Example\Huddle.RestClient.Example.csproj", "{CD80730A-D20A-43C1-92D8-05437C34C177}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{28005210-3C35-4BD6-BBAB-BD5E7F94863B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{28005210-3C35-4BD6-BBAB-BD5E7F94863B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{28005210-3C35-4BD6-BBAB-BD5E7F94863B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{28005210-3C35-4BD6-BBAB-BD5E7F94863B}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CD80730A-D20A-43C1-92D8-05437C34C177}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CD80730A-D20A-43C1-92D8-05437C34C177}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CD80730A-D20A-43C1-92D8-05437C34C177}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CD80730A-D20A-43C1-92D8-05437C34C177}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
