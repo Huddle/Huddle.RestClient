@@ -1,0 +1,15 @@
+= Huddle.RestClient
+
+This is a wrapper over the .NET HttpWebRequest, etc. and particular HTTP methods in order to
+make your life easier when developing against the Huddle API in .NET.
+
+== Build
+
+There are no build scripts at the moment, so it's a case of firing up Visual Studio to build.
+
+== Examples
+
+There are several usage examples in the Huddle.RestClient.Examples project in the form of NUnit 
+tests.  It's worth pointing out that these examples use URI templating, but the Huddle files API
+should not be used in this way.
+
