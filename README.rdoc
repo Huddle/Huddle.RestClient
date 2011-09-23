@@ -3,6 +3,9 @@
 This is a wrapper over the .NET HttpWebRequest, etc. and particular HTTP methods in order to
 make your life easier when developing against the Huddle API in .NET.
 
+We also provide a client called DynamicRest for projects built on .NET 4.0. This uses the dynamic
+keyword, and reduces the need to parse the response. See that project for more: https://github.com/Huddle/dynamicrest
+
 == Build
 
 There are no build scripts at the moment, so it's a case of firing up Visual Studio to build.
@@ -10,6 +13,20 @@ There are no build scripts at the moment, so it's a case of firing up Visual Stu
 == Examples
 
 There are several usage examples in the Huddle.RestClient.Examples project in the form of NUnit 
-tests.  It's worth pointing out that these examples use URI templating, but the Huddle files API
-should not be used in this way.
+tests.
+
+In order to run these tests, you will need a Huddle account, and create a workspace within it, and a folder within
+that workspace. You can obtain the Ids needed for the URIs used in the tests from the web page URIs
+
+
+It's worth pointing out that although these examples use URI templating to build the URI, the Huddle files API
+should not be used in this way. Instead you should follow links from the entry point URI. See the documentation on 
+Huddle's API for more: http://code.google.com/p/huddle-apis/
+
+
+== Usage
+You will need to include  a reference to log4net in your project, we supply this in the Libs directory, 
+otherwise you will get a runtime exception for a missing dependency when observers are registered. 
+You will also need to include the dependency on the JayRock.Json.dll if you intend to use the JsonApiCall
+
 
