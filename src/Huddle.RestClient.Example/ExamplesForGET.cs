@@ -7,7 +7,7 @@ namespace Huddle.Clients.Example
     [TestFixture]
     public class Given_an_existing_and_valid_oauth2_token_using_XMLApiCall
     {
-        private ApiResponse _response;
+        private IApiResponse _response;
 
         [SetUp]
         public void When_i_request_the_users_details()
@@ -39,7 +39,7 @@ namespace Huddle.Clients.Example
     [TestFixture]
     public class Given_an_existing_and_valid_oauth2_token_using_XMLApiCall_over_SSL
     {
-        private ApiResponse _response;
+        private IApiResponse _response;
 
         [SetUp]
         public void When_i_request_the_users_details()
@@ -71,7 +71,7 @@ namespace Huddle.Clients.Example
     [TestFixture]
     public class Given_an_existing_and_valid_oauth2_token_using_JsonApiCall
     {
-        private ApiResponse _response;
+        private IApiResponse _response;
 
         [SetUp]
         public void When_i_request_the_users_details()

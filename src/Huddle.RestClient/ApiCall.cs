@@ -77,7 +77,7 @@ namespace Huddle.Clients
             _accept = value;
         }
 
-        public ApiResponse<TResult> Delete<TResult>(string uri) where TResult : class
+        public IApiResponse<TResult> Delete<TResult>(string uri) where TResult : class
         {
             return Execute<TResult>(GetRequest(uri, "DELETE"));
         }
@@ -87,27 +87,27 @@ namespace Huddle.Clients
             _requestAuthenticationMechanism = mechanism;
         }
 
-        public virtual ApiResponse<TResult> Get<TResult>(string uri)
+        public virtual IApiResponse<TResult> Get<TResult>(string uri)
             where TResult : class
         {
             return Execute<TResult>(GetRequest(uri, "GET"));
         }
 
-        public ApiResponse Get(string uri)
+        public IApiResponse Get(string uri)
         {
             return Execute(GetRequest(uri, "GET"));
         }
 
-        public virtual ApiResponse Post(string uri)
+        public virtual IApiResponse Post(string uri)
         {
             var request = GetRequest(uri, "POST");
             request.ContentLength = 0;
             return Execute(request);
         }
 
-        public virtual ApiResponse Post(string uri, object postData)
+        public virtual IApiResponse Post(string uri, object postData)
         {
-            ApiResponse response;
+            IApiResponse response;
             var serializedObject = Serialize(postData);
             
             try
@@ -127,7 +127,7 @@ namespace Huddle.Clients
             return response;
         }
 
-        public virtual ApiResponse<TResult> Post<TResult>(string uri)
+        public virtual IApiResponse<TResult> Post<TResult>(string uri)
             where TResult : class
         {
             var request = GetRequest(uri, "POST");
@@ -135,7 +135,7 @@ namespace Huddle.Clients
             return Execute<TResult>(request);
         }
 
-        public ApiResponse<TResult> Post<TResult>(string uri, object postData)
+        public IApiResponse<TResult> Post<TResult>(string uri, object postData)
             where TResult : class
         {
             ApiResponse<TResult> response;
@@ -159,9 +159,9 @@ namespace Huddle.Clients
             return response;
         }
 
-        public ApiResponse Delete(string uri)
+        public IApiResponse Delete(string uri)
         {
-            ApiResponse response;
+            IApiResponse response;
             try
             {
                 var request = GetRequest(uri, "DELETE");
@@ -182,9 +182,9 @@ namespace Huddle.Clients
             return response;
         }
 
-        public virtual ApiResponse Put(string uri, object postData)
+        public virtual IApiResponse Put(string uri, object postData)
         {
-            ApiResponse response;
+            IApiResponse response;
             try
             {
                 var request = PutRequest(uri, postData);
@@ -202,7 +202,7 @@ namespace Huddle.Clients
             return response;
         }
         
-        public ApiResponse<TResult> Put<TResult>(string uri, object postData)
+        public IApiResponse<TResult> Put<TResult>(string uri, object postData)
             where TResult : class
         {
             ApiResponse<TResult> response;
@@ -267,7 +267,7 @@ namespace Huddle.Clients
             return response;
         }
 
-        protected ApiResponse Execute(WebRequest request)
+        protected virtual IApiResponse Execute(WebRequest request)
         {
             ApiResponse response;
 

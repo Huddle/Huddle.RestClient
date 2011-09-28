@@ -116,6 +116,8 @@
     <Compile Include="Serializers\JsonCodec.cs" />
     <Compile Include="Serializers\XmlCodec.cs" />
     <Compile Include="ServicePointManagerHelper.cs" />
+    <Compile Include="Simulators\SimulatedApiResponse.cs" />
+    <Compile Include="Simulators\SimulatedApiCall.cs" />
     <Compile Include="StringWriterWithEncoding.cs" />
     <Compile Include="UploadProgressEventArgs.cs" />
     <Compile Include="XmlApiCall.cs" />

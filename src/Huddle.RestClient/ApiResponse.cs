@@ -20,9 +20,9 @@ namespace Huddle.Clients
 
         public virtual ICodec Codec { get; internal set; }
 
-        public bool Error { get; internal set; }
+        public bool Error { get; set; }
 
-        public Exception Exception { get; internal set; }
+        public Exception Exception { get; set; }
 
         public virtual HttpStatusCode Status { get; private set; }
         

@@ -1,4 +1,5 @@
-﻿using System.Net;
+﻿using System;
+using System.Net;
 
 namespace Huddle.Clients
 {
@@ -7,6 +8,8 @@ namespace Huddle.Clients
         HttpStatusCode Status { get; }
         string ContentType { get; }
         string Response { get; }
+        bool Error { get; set; }
+        Exception Exception { get; set; }
         TData DeserializeAs<TData>();
     }
 }

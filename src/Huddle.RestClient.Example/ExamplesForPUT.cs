@@ -9,7 +9,7 @@ namespace Huddle.Clients.Example
     [TestFixture]
     public class Given_a_user_who_wants_to_update_a_file_using_XML
     {
-        ApiResponse _response;
+        IApiResponse _response;
 
         [SetUp]
         public void When_the_file_metadata_is_PUTed()

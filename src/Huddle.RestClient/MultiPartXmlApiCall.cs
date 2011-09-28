@@ -88,13 +88,13 @@ namespace Huddle.Clients
             }
         }
 
-        public ApiResponse Post(string uri)
+        public IApiResponse Post(string uri)
         {
             var request = GetRequest(uri, "POST");
             return Execute(request);
         }
 
-        public ApiResponse Put(string uri)
+        public IApiResponse Put(string uri)
         {
             var request = GetRequest(uri, "PUT");
             return Execute(request);
@@ -106,7 +106,7 @@ namespace Huddle.Clients
             return Execute<TResult>(request);
         }
 
-        public override ApiResponse<TResult> Post<TResult>(string uri)
+        public override IApiResponse<TResult> Post<TResult>(string uri)
         {
             var request = GetRequest(uri, "POST");
             return Execute<TResult>(request);
